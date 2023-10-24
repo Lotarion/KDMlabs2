@@ -56,14 +56,37 @@ def prime_factors(num: int) -> str:
 
     string = ""
     for factor in factor_dict.keys():
-        string += f"{factor} ^ {factor_dict[factor]} * "
+        string += f"{factor}^{factor_dict[factor]} * "
     string += "\b\b\b"
     return string
 
 
+def lcm(num1, num2):
+    return (num1 * num2) / gcd(num1, num2)
+
+
+def direct_proof(num, expr):
+    result = ""
+    if expr == "If a number is even, then it is divisible by 2.":
+        if parity_check(num) == "Even":
+            result = f"{num} is indeed an even number since it can be written as 2k where k={num // 2}. As such, by definition, it is divisible by 2, validating the given statement."
+        else:
+            result = f"Here, {num} is an odd number, which goes against our hypothesis, as well as the conclusion"
+    elif expr == "If a number is even, then it is not divisible by 2.":
+        if parity_check(num) == "Even":
+            result = f"{num} is indeed an even number since it can be written as 2k where k={num // 2}. As such, by definition, it is divisible by 2, which goes against our hypothesis, as well as the conclusion."
+        else:
+            result = f"Here, {num} is an odd number, which goes against our hypothesis. It does apply to our conclusion though, since our number {num} is not, in fact, divisible by 2."
+
+    return result
+
+
 def main():
-    # print(parity_check(25))
-    print(prime_factors(54000))
+    print(parity_check(25))
+    print(prime_checker(17))
+    print(gcd(48, 18))
+    print(prime_factors(56))
+    print(lcm(15, 20))
 
 
 if __name__ == '__main__':
