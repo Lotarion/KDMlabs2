@@ -15,9 +15,8 @@ def is_symmetric(input_relation: set) -> bool:
 def is_transitive(input_relation: set) -> bool:
     for i, j in input_relation:
         for m, n in input_relation:
-            if j == m:
-                if (i, n) not in input_relation:
-                    return False
+            if j == m and (i, n) not in input_relation:
+                return False
     return True
 
 
