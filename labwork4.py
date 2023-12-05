@@ -82,12 +82,12 @@ def direct_proof(num, expr):
 
 
 def main():
-    print(parity_check(25))
-    print(prime_checker(17))
-    print(gcd(48, 18))
-    print(prime_factors(56))
-    print(lcm(15, 20))
-
+    # print(parity_check(25))
+    # print(prime_checker(18))
+    # print(gcd(48, 180))
+    print(prime_factors(42))
+    # print(int(lcm(15, 20)))
+    # direct_proof("If a number is even, then it is divisible by 2.", 24)
 
 if __name__ == '__main__':
     main()
